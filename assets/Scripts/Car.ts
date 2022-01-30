@@ -8,6 +8,8 @@ import cc, {
   macro,
   RigidBody2D,
   v2,
+  v3,
+  Vec3
 } from 'cc';
 
 const {ccclass, property} = _decorator;
@@ -46,23 +48,19 @@ export class Car extends Component {
       case macro.KEY.up:
       case macro.KEY.w:
         this.accelerationDirection = 1
-        console.log('UP')
         break;
       case macro.KEY.down:
       case macro.KEY.s:
         this.accelerationDirection = -1
-        console.log('DOWN')
         break;
       case macro.KEY.left:
       case macro.KEY.a:
         this.travelDirection = 10
-        console.log('LEFT')
         break;
       case macro.KEY.right:
       case macro.KEY.d:
         this.travelDirection = -10
-        console.log('RIGHT')
-        break;
+         break;
     }
 
   }
@@ -75,14 +73,12 @@ export class Car extends Component {
       case macro.KEY.down:
       case macro.KEY.s:
         this.accelerationDirection = 0
-        console.log('UP_UP or UP_DOWN')
         break;
       case macro.KEY.left:
       case macro.KEY.a:
       case macro.KEY.right:
       case macro.KEY.d:
         this.travelDirection = 0
-        console.log('UP_RIGHT or UP_LEFT')
         break;
     }
   }
@@ -93,13 +89,14 @@ export class Car extends Component {
 
   update(deltaTime: number) {
     if (this.accelerationDirection != 0) {
-      //Math.tan(this.node.angle * Math.PI / 180)
-      this.rigidBody.applyForceToCenter(v2(Math.tan(this.node.angle * Math.PI / 180)*this.speed, this.accelerationDirection*this.speed), true)
-    } else {
-      this.rigidBody.applyForceToCenter(v2(0, 0), true)
+      const position = this.node.getPosition()
+      const speed = this.accelerationDirection * this.speed
+      const newY = Math.cos(this.node.angle * Math.PI / 180) * speed
+      const newX = -Math.sin(this.node.angle * Math.PI / 180) * speed
+      this.node.setPosition(v3(newX  + position.x, newY + position.y, position.z))
     }
 
-    if(this.travelDirection !==0) {
+    if (this.travelDirection !== 0) {
       this.node.angle += this.travelDirection
     }
   }
