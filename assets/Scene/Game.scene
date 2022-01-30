@@ -23,7 +23,7 @@
     "_prefab": null,
     "autoReleaseAssets": false,
     "_globals": {
-      "__id__": 341
+      "__id__": 342
     },
     "_id": "e2948b6d-f39e-4fff-ac6f-843498fe886d"
   },
@@ -48,13 +48,13 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 338
-      },
-      {
         "__id__": 339
       },
       {
         "__id__": 340
+      },
+      {
+        "__id__": 341
       }
     ],
     "_prefab": null,
@@ -11675,6 +11675,9 @@
     "_components": [
       {
         "__id__": 337
+      },
+      {
+        "__id__": 338
       }
     ],
     "_prefab": null,
@@ -11719,7 +11722,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 724.824120603015,
+    "_orthoHeight": 606.0504201680673,
     "_near": 1,
     "_far": 2000,
     "_color": {
@@ -11746,6 +11749,20 @@
     "_visibility": 41943040,
     "_targetTexture": null,
     "_id": "92a45FXhZD6a5H9z7oUAbS"
+  },
+  {
+    "__type__": "5e8f1krFbNIHaJWcxmFUQJu",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 336
+    },
+    "_enabled": true,
+    "__prefab": null,
+    "player": {
+      "__id__": 330
+    },
+    "_id": "0bVApBI6ZHO7xgNFj3BxSu"
   },
   {
     "__type__": "cc.UITransform",
@@ -11815,19 +11832,19 @@
   {
     "__type__": "cc.SceneGlobals",
     "ambient": {
-      "__id__": 342
-    },
-    "shadows": {
       "__id__": 343
     },
-    "_skybox": {
+    "shadows": {
       "__id__": 344
     },
-    "fog": {
+    "_skybox": {
       "__id__": 345
     },
-    "octree": {
+    "fog": {
       "__id__": 346
+    },
+    "octree": {
+      "__id__": 347
     }
   },
   {
